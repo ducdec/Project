@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzuki Bike Webside Landing Page</title>
+    <link rel="stylesheet" href="index_Moto.css">
+</head>
+<body>
+    <section class="main">
+        <header>
+            <a href="#"><img src="image_moto/logo.png" class="logo"></a>
+            <ul class="navigation">
+                <li><a href="#">Đặc tính nổi bật</a></li>
+                <li><a href="#">Phòng trưng bày</a></li>
+                <li><a href="#">Mô tả</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <h2>Sẵn <span>xe</span></h2>
+            <a href="#" class="btn">Lái ngay</a>
+            <img src="image_moto/bike.png" class="bike">
+        </div>
+
+        <!-- Slider Content -->
+        <div class="slider">
+            <div class="slides active">
+                <h2><span>Engine</span><br>599 cc</h2>
+                <h2><span>Max Speed</span><br>260 Kmph</h2>
+            </div>
+            <div class="slides">
+                <h2><span>Mileage</span><br>14 Kmpl</h2>
+                <h2><span>0-100 Kmph</span><br>4 Seconds</h2>
+            </div>
+            <div class="slides">
+                <h2><span>Wheels</span><br>17-Inch Alloy</h2>
+                <h2><span>Tyre Type</span><br>Tubeless</h2>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul class="sci">
+                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            </ul>
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const slides = document.querySelectorAll('.slides');
+        const dots = document.querySelectorAll('.dot');
+
+        function setActive(i){
+            for(slide of slides)
+            slide.classList.remove('active');
+            slides[i].classList.add('active');
+            for(dot of dots)
+            dot.classList.remove('active');
+            dots[i].classList.add('active');
+        }
+
+        for(let j=0; j<dots.length; j++){
+            dots[j].addEventListener('click',function(){
+                setActive(j)
+            })
+        }
+    </script>
+</body>
+</html>
